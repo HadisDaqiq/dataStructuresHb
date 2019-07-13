@@ -28,61 +28,58 @@ def unique_houses(filename):
    
 unique_houses("cohort_data.txt")
 
-def sort_by_cohort(filename):
-    """TODO: Return a list of all cohort lists, including ghosts but not instructors.
+# def sort_by_cohort(filename):
+#     """TODO: Return a list of all cohort lists, including ghosts but not instructors.
 
-    Sort students by cohort, skipping instructors.
+#     Sort students by cohort, skipping instructors.
 
-    Iterate over the data to create a list for each cohort. Puts ghosts into a
-    separate list called "ghosts".
+#     Iterate over the data to create a list for each cohort. Puts ghosts into a
+#     separate list called "ghosts".
 
-    For example:
+#     For example:
 
-    >>> sort_by_cohort("cohort_data.txt")
-    [['Harry Potter', 'Mandy Brocklehurst', 'Ron Weasley', 'Oliver Wood', 'Colin Creevey', 'Cho Chang', 'Michael Corner', 'Draco Malfoy', 'Seamus Finnigan', 'Eddie Carmichael', 'Theodore Nott', 'Terence Higgs', 'Hermione Granger', 'Penelope Clearwater', 'Angelina Johnson', 'Dennis Creevey'], ['Neville Longbottom', 'Cedric Diggory', 'Pansy Parkinson', 'Anthony Goldstein', 'Padma Patil', 'Luna Lovegood', 'Eleanor Branstone', 'Lee Jordan', 'Marietta Edgecombe', 'Andrew Kirke', 'Ginny Weasley', 'Mary Macdonald', 'Blaise Zabini', 'Natalie McDonald', 'Adrian Pucey', 'Hannah Abbott', 'Graham Pritchard', 'Susan Bones', 'Roger Davies', 'Owen Cauldwell'], ['Laura Madley', 'Orla Quirke', 'Parvati Patil', 'Eloise Midgeon', 'Zacharias Smith', 'Cormac McLaggen', 'Lisa Turpin', 'Demelza Robins', 'Ernie Macmillan', 'Millicent Bullstrode', 'Percy Weasley', 'Jimmy Peakes', 'Justin Finch-Fletchley', 'Miles Bletchley', 'Malcolm Baddock'], ['Marcus Belby', 'Euan Abercrombie', 'Vincent Crabbe', 'Ritchie Coote', 'Katie Bell', 'Terry Boot', 'Lavender Brown', 'Gregory Goyle', 'Marcus Flint', 'Dean Thomas', 'Jack Sloper', 'Rose Zeller', 'Stewart Ackerley', 'Fred Weasley', 'George Weasley', 'Romilda Vane', 'Alicia Spinnet', 'Kevin Whitby'], ['Friendly Friar', 'Grey Lady', 'Nearly Headless Nick', 'Bloody Baron']]
-    """
+#     >>> sort_by_cohort("cohort_data.txt")
+#     [['Harry Potter', 'Mandy Brocklehurst', 'Ron Weasley', 'Oliver Wood', 'Colin Creevey', 'Cho Chang', 'Michael Corner', 'Draco Malfoy', 'Seamus Finnigan', 'Eddie Carmichael', 'Theodore Nott', 'Terence Higgs', 'Hermione Granger', 'Penelope Clearwater', 'Angelina Johnson', 'Dennis Creevey'], ['Neville Longbottom', 'Cedric Diggory', 'Pansy Parkinson', 'Anthony Goldstein', 'Padma Patil', 'Luna Lovegood', 'Eleanor Branstone', 'Lee Jordan', 'Marietta Edgecombe', 'Andrew Kirke', 'Ginny Weasley', 'Mary Macdonald', 'Blaise Zabini', 'Natalie McDonald', 'Adrian Pucey', 'Hannah Abbott', 'Graham Pritchard', 'Susan Bones', 'Roger Davies', 'Owen Cauldwell'], ['Laura Madley', 'Orla Quirke', 'Parvati Patil', 'Eloise Midgeon', 'Zacharias Smith', 'Cormac McLaggen', 'Lisa Turpin', 'Demelza Robins', 'Ernie Macmillan', 'Millicent Bullstrode', 'Percy Weasley', 'Jimmy Peakes', 'Justin Finch-Fletchley', 'Miles Bletchley', 'Malcolm Baddock'], ['Marcus Belby', 'Euan Abercrombie', 'Vincent Crabbe', 'Ritchie Coote', 'Katie Bell', 'Terry Boot', 'Lavender Brown', 'Gregory Goyle', 'Marcus Flint', 'Dean Thomas', 'Jack Sloper', 'Rose Zeller', 'Stewart Ackerley', 'Fred Weasley', 'George Weasley', 'Romilda Vane', 'Alicia Spinnet', 'Kevin Whitby'], ['Friendly Friar', 'Grey Lady', 'Nearly Headless Nick', 'Bloody Baron']]
+#     """
 
-    all_students = []
-    winter_16 = []
-    spring_16 = []
-    summer_16 = []
-    fall_15 = []
-    ghosts = []
+#     all_students = []
+#     winter_16 = []
+#     spring_16 = []
+#     summer_16 = []
+#     fall_15 = []
+#     ghosts = []
 
-    # Code goes here
-    for line in open(filename):
-        line = line.rstrip()  
-        words = line.split("|")
+#     # Code goes here
+#     for line in open(filename):
+#         line = line.rstrip()  
+#         words = line.split("|")
 
-       # all_students.append(words[0] +" " + words[1])
-        #winter_16 = [student for student in all_students if student.startswith("Win")]
-        # words[4] != "winter_16"):
-        if (words[4].startswith("Win")):
-            winter_16.append(words[0] +" " + words[1])
+#         if (words[4].startswith("Win")):
+#             winter_16.append(words[0] +" " + words[1])
 
-        if (words[4].startswith("Spr")):
-            spring_16.append(words[0] +" " + words[1])
+#         if (words[4].startswith("Spr")):
+#             spring_16.append(words[0] +" " + words[1])
 
-        if (words[4].startswith("Sum")):
-            summer_16.append(words[0] +" " + words[1])
+#         if (words[4].startswith("Sum")):
+#             summer_16.append(words[0] +" " + words[1])
 
-        if (words[4].startswith("Fal")):
-            fall_15.append(words[0] +" " + words[1])
+#         if (words[4].startswith("Fal")):
+#             fall_15.append(words[0] +" " + words[1])
     
 
-        if (words[4].startswith("G")):
-            ghosts.append(words[0] +" " + words[1])
+#         if (words[4].startswith("G")):
+#             ghosts.append(words[0] +" " + words[1])
 
-    all_students.append(fall_15)
-    all_students.append(winter_16)
-    all_students.append(spring_16)
-    all_students.append(summer_16)
-    all_students.append(ghosts)
+#     all_students.append(fall_15)
+#     all_students.append(winter_16)
+#     all_students.append(spring_16)
+#     all_students.append(summer_16)
+#     all_students.append(ghosts)
     
 
-    return all_students
+#     return all_students
 
-sort_by_cohort("cohort_data.txt")
+# sort_by_cohort("cohort_data.txt")
 
 def hogwarts_by_house(filename):
     """TODO: Sort students into lists by house and return all lists in one list.
@@ -97,7 +94,6 @@ def hogwarts_by_house(filename):
     [['Abbott', 'Chang', 'Creevey', 'Creevey', 'Edgecombe', 'Nott', 'Spinnet'], ['Abercrombie', 'Bell', 'Brown', 'Coote', 'Finnigan', 'Granger', 'Johnson', 'Jordan', 'Kirke', 'Longbottom', 'Macdonald', 'McDonald', 'McLaggen', 'Patil', 'Peakes', 'Potter', 'Robins', 'Sloper', 'Thomas', 'Vane', 'Weasley', 'Weasley', 'Weasley', 'Weasley', 'Weasley', 'Wood'], ['Bones', 'Branstone', 'Cauldwell', 'Diggory', 'Finch-Fletchley', 'Macmillan', 'Madley', 'Midgeon', 'Smith', 'Whitby', 'Zeller'], ['Ackerley', 'Belby', 'Boot', 'Brocklehurst', 'Carmichael', 'Clearwater', 'Corner', 'Davies', 'Goldstein', 'Lovegood', 'Patil', 'Quirke', 'Turpin'], ['Baddock', 'Bletchley', 'Bullstrode', 'Crabbe', 'Flint', 'Goyle', 'Higgs', 'Malfoy', 'Parkinson', 'Pritchard', 'Pucey', 'Zabini'], ['Baron', 'Friar', 'Lady', 'Nick'], ['Flitwick', 'McGonagall', 'Snape', 'Sprout']]
 
     """
-
     all_hogwarts = []
     dumbledores_army = []
     gryffindor = []
@@ -107,11 +103,61 @@ def hogwarts_by_house(filename):
     ghosts = []
     instructors = []
 
-    # Code goes here
+
+    for line in open(filename):
+        line = line.rstrip()  
+        words = line.split("|")
+
+        if words[2].startswith("Dum"):
+
+            dumbledores_army.append(words[1])
+            dumbledores_army.sort()
+            all_hogwarts += dumbledores_army
+
+        if words[2].startswith("Gry"):
+
+            gryffindor.append(words[1])
+            gryffindor.sort()
+            all_hogwarts += gryffindor
+
+        if words[2].startswith("Huff"):
+
+            hufflepuff.append(words[1])
+            hufflepuff.sort()
+            all_hogwarts += hufflepuff
+
+
+        if words[2].startswith("Rav"):
+
+            ravenclaw.append(words[1])
+            ravenclaw.sort()
+            all_hogwarts += ravenclaw
+
+        if words[2].startswith("Sly"):
+                
+            slytherin.append(words[1])
+            slytherin.sort()
+            all_hogwarts += slytherin
+
+        if (words[4].startswith("G")):
+            ghosts += words[1]
+            ghosts.sort()
+
+            hogwarts_by_house.append(ghosts)
+
+        if (words[4].startswith("I")):
+            instructors += words[1]
+            instructors.sort()
+
+            hogwarts_by_house.append(instructors)
+
 
     return all_hogwarts
 
 
+hogwarts_by_house("cohort_data.txt")
+
+    
 def all_students_tuple_list(filename):
     """TODO: Return a list of tuples of student data.
 
