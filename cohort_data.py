@@ -1,9 +1,8 @@
 """Functions to parse a file containing student data."""
 
-filename = open("cohort_data.txt")
 
 def unique_houses(filename):
-
+    # filename = open("cohort_data.txt")
 
     """TODO: Return a set of student houses.
         
@@ -17,27 +16,17 @@ def unique_houses(filename):
 
     """
 
-    #houses = set()
+    houses = set()
    
-    filename = open("cohort_data.txt")
-    # house_names = ["Dumbledore's Army", 'Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
-    # for line in filename:
-    #     line = line.rstrip()  
-    #     words = line.split("|")
-    #     if words[2] == house_names:
-    #         houses.add(words[2])
-            
-    #     # Code goes here
-        
-    
-    # return words
-    for line in filename:
-        line = line.rstrip() 
+    for line in open(filename):
+        line = line.rstrip()  
         words = line.split("|")
+        if words[2] != "":
+            houses.add(words[2])
 
-        print(words)
-
-unique_houses(filename)
+    return houses
+   
+unique_houses("cohort_data.txt")
 
 def sort_by_cohort(filename):
     """TODO: Return a list of all cohort lists, including ghosts but not instructors.
@@ -61,9 +50,39 @@ def sort_by_cohort(filename):
     ghosts = []
 
     # Code goes here
+    for line in open(filename):
+        line = line.rstrip()  
+        words = line.split("|")
+
+       # all_students.append(words[0] +" " + words[1])
+        #winter_16 = [student for student in all_students if student.startswith("Win")]
+        # words[4] != "winter_16"):
+        if (words[4].startswith("Win")):
+            winter_16.append(words[0] +" " + words[1])
+
+        if (words[4].startswith("Spr")):
+            spring_16.append(words[0] +" " + words[1])
+
+        if (words[4].startswith("Sum")):
+            summer_16.append(words[0] +" " + words[1])
+
+        if (words[4].startswith("Fal")):
+            fall_15.append(words[0] +" " + words[1])
+    
+
+        if (words[4].startswith("G")):
+            ghosts.append(words[0] +" " + words[1])
+
+    all_students.append(fall_15)
+    all_students.append(winter_16)
+    all_students.append(spring_16)
+    all_students.append(summer_16)
+    all_students.append(ghosts)
+    
 
     return all_students
 
+sort_by_cohort("cohort_data.txt")
 
 def hogwarts_by_house(filename):
     """TODO: Sort students into lists by house and return all lists in one list.
